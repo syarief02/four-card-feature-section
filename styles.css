@@ -1,0 +1,196 @@
+:root {
+    /* colors */
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-yellow: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+    --clr-soft-blue: hsl(233, 100%, 98%);
+    --clr-grayish: hsl(228, 12%, 44%);
+    --clr-dark-blue: hsl(234, 12%, 34%);
+    --clr-white: hsl(0, 0%, 100%);
+    --ff-poppins: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--ff-poppins);
+    background-color: var(--clr-soft-blue);
+    color: var(--clr-grayish);
+    line-height: 1.6;
+}
+
+/* Intro */
+.intro {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+.intro h1 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+.intro h1 span {
+    display: block;
+}
+
+.intro h1 span:first-child {
+    font-weight: 200;
+    font-size: 1.75rem;
+    color: var(--clr-grayish);
+}
+
+.intro h1 span:last-child {
+    font-weight: 600;
+    font-size: 1.75rem;
+    color: var(--clr-dark-blue);
+    margin-top: 0.5rem;
+}
+
+.intro p {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    max-width: 327px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Feature cards – mobile (one column) */
+.features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 2rem 4rem;
+    max-width: 327px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    background: var(--clr-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* colored top stripe */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-supervisor::before {
+    background: var(--clr-cyan);
+}
+
+.card-team-builder::before {
+    background: var(--clr-red);
+}
+
+.card-karma::before {
+    background: var(--clr-yellow);
+}
+
+.card-calculator::before {
+    background: var(--clr-blue);
+}
+
+.card h3 {
+    margin: 0 0 1rem;
+    font-size: 1.125rem;
+    color: var(--clr-dark-blue);
+}
+
+.card p {
+    margin: 0 0 2.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+/* icon at bottom right */
+.icon {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+}
+
+.icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* attribution */
+.attribution {
+    text-align: center;
+    font-size: 0.75rem;
+    padding-bottom: 2rem;
+}
+
+.attribution a {
+    color: inherit;
+}
+
+/* Desktop (diamond layout) */
+@media (min-width: 768px) {
+    .intro {
+        padding-top: 6rem;
+    }
+
+    .intro h1 span {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        max-width: 540px;
+        margin: 1rem auto 2rem;
+        font-size: 1rem;
+    }
+
+    .features {
+        padding: 0;
+        max-width: 1100px;
+        margin: 0 auto 6rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-gap: 2rem;
+        align-items: center;
+    }
+
+    /* place cards in a diamond */
+    .card-team-builder {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .card-supervisor {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .card-calculator {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .card-karma {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
