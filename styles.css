@@ -155,9 +155,6 @@ body {
 
 }
 
-centerCard {
-    margin: 1.5em 0;
-}
 
 /* Desktop (diamond layout) */
 @media (min-width: 768px) {
