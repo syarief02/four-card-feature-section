@@ -23,7 +23,10 @@ body {
     background-color: var(--clr-soft-blue);
     color: var(--clr-grayish);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* Intro */
 .intro {
@@ -37,7 +40,8 @@ body {
 }
 
 .intro h1 span {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 .intro h1 span:first-child {
@@ -63,12 +67,9 @@ body {
 
 /* Feature cards – mobile (one column) */
 .features {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 2rem 4rem;
     max-width: 327px;
     margin: 0 auto;
+
 }
 
 .card {
@@ -78,6 +79,7 @@ body {
     padding: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin: 1.5em 0;
 }
 
 /* colored top stripe */
@@ -146,14 +148,20 @@ body {
     color: inherit;
 }
 
+centerCard {
+    margin: 1.5em 0;
+}
+
 /* Desktop (diamond layout) */
 @media (min-width: 768px) {
     .intro {
         padding-top: 6rem;
+        justify-content: center;
     }
 
     .intro h1 span {
         font-size: 2.5rem;
+        justify-content: center;
     }
 
     .intro p {
@@ -163,34 +171,34 @@ body {
     }
 
     .features {
-        padding: 0;
-        max-width: 1100px;
-        margin: 0 auto 6rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto auto;
-        grid-gap: 2rem;
+        max-width: 100%;
+        margin: 0 5rem;
+        display: flex;
+        justify-content: space-evenly;
         align-items: center;
+        align-content: center;
+        flex-shrink: 0;
     }
 
-    /* place cards in a diamond */
-    .card-team-builder {
-        grid-column: 2;
-        grid-row: 1;
-    }
-
-    .card-supervisor {
-        grid-column: 1;
-        grid-row: 2;
+    .innerCard {
+        width: 375px;
     }
 
     .card-calculator {
-        grid-column: 3;
-        grid-row: 2;
+
+        margin: 1.5em 1.5rem;
+    }
+
+    .card-supervisor {
+
+        margin: 1.5em 1.5rem;
     }
 
     .card-karma {
-        grid-column: 2;
-        grid-row: 3;
+        margin: 1.5rem 0;
+    }
+
+    .card-team-builder {
+        margin: 1.5rem 0;
     }
 }
