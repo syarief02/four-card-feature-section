@@ -84,7 +84,7 @@ body {
     padding: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin: 0 0 1.5em 0 ;
+    margin: 0 0 1.5em 0;
 }
 
 /* colored top stripe */
@@ -151,6 +151,7 @@ body {
 
 .attribution a {
     color: inherit;
+    margin: 1rem 0;
 }
 
 centerCard {
