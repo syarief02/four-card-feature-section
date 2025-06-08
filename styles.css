@@ -147,11 +147,12 @@ body {
     text-align: center;
     font-size: 0.75rem;
     padding-bottom: 2rem;
+    margin: 1rem 0;
 }
 
 .attribution a {
     color: inherit;
-    margin: 1rem 0;
+
 }
 
 centerCard {
